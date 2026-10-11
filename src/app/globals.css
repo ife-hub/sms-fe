@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. Chalkboard green for structure, ink blue for actions,
+  and school-bus yellow reserved for a single job: marking where you are.
+*/
+@theme {
+  --font-sans: "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Public Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-board: #14332b;
+  --color-board-soft: #1c463b;
+  --color-chalk: #dfe9e3;
+  --color-paper: #f2f5f3;
+  --color-surface: #ffffff;
+  --color-line: #d9e0dc;
+  --color-ink: #16201c;
+  --color-muted: #5a6962;
+  --color-primary: #1f3fae;
+  --color-primary-hover: #183390;
+  --color-primary-soft: #e7ecfb;
+  --color-bus: #f5b800;
+  --color-danger: #b8322b;
+  --color-danger-soft: #fbe9e7;
+  --color-success: #1b7448;
+  --color-success-soft: #e3f4ea;
+  --color-warn: #8f5800;
+  --color-warn-soft: #fcf0d6;
+
+  --radius-field: 0.5rem;
+  --radius-panel: 0.875rem;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
